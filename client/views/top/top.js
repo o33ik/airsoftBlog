@@ -16,6 +16,7 @@ Template.Top.events({
     },
     'click #map-link': function (e, tmpl) {
         // will be soon
+        Router.go('/');
     }
 });
 

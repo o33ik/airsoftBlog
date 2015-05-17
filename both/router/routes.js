@@ -17,41 +17,59 @@ Router.configure({
 */
 
 Router.route(
-	'/', 
+	'home', 
 	{
+		path: '/',
 		name: 'home', 
 		template: 'Home'
 	}
 );
 
+// skip object  
+var SKIP = 10;
+
 Router.route(
-	'/news', 
+	'news', 
 	{
-		name: 'news', 
+		path: '/news', 
 		template: 'News',
 		data: function () {
 			var self = this;
 			return {
-				category: 'news'
+				category: 'news',
+				skip: SKIP
 			}
 		}
 	}
 );
 
 Router.route(
-	'/news/:category',
+	'category',
 	{
+		path: '/news/:category',
 		template: 'News',
   		data: function () {
   			console.log('Router go');
  		   	var self = this;
    		 	return {
-      			category: self.params.category
+      			category: self.params.category,
+      			skip: SKIP
     		}
   		}
 	}
-)
+);
 
 
-
-Router.route('/:post', {name: 'post'});
+Router.route(
+	'post', 
+	{
+		path: '/post/:id',	
+		template: 'Post',
+		data: function () {
+			var self = this;
+			return {
+				postId: self.params.id
+			}
+		}
+	}
+);
