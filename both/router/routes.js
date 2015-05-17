@@ -17,5 +17,8 @@ Router.configure({
 */
 
 Router.route('/', {name: 'home', template: 'Home'});
-Router.route('/news', {name: 'news', template: 'News'});
+Router.route('/news', {
+	name: 'news', 
+	template: 'News'
+});
 Router.route('/:post', {name: 'post'});

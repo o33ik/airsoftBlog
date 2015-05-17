@@ -1,3 +1,30 @@
 <template name="News">
-  client/views/news/news.html
+	<div class='content'>
+  		{{#if isPosts}}
+  			{{#each posts}}
+  				{{> post}}
+  			{{/each}}
+  		{{/if}}
+  	</div>
+</template>
+
+
+<template name='post'>
+	<div id={{_id}} class="post"> 
+		<img  class='post-titleImage' src={{titleImg}}>
+		<div class='post-content'>	
+			<p class='post-title'>
+				{{textSlicer title 0}}
+			</p>
+			<p class='post-text'>
+				{{{textSlicer text 1}}}
+			</p>
+			<p class="post-date">
+				{{formatDate createdAt}}
+			</p>
+			<p class='post-author'>
+				{{authorId}}
+			</p>
+		</div>
+	</div>
 </template>
