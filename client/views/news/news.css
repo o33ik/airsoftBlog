@@ -7,7 +7,7 @@ div.content {	/* блок з контентом */
 	margin: auto auto;
 	padding-top: 75px;
 	background-color: white;
-	padding: 70px 20px 50px 20px;
+	padding: 70px 100px 50px 100px;
 }
 
 div.post {	/* блок із записом */
@@ -46,4 +46,8 @@ div.post {	/* блок із записом */
 	text-align: right;
 }
 .post-author {
+}
+
+#loadMore {
+	margin-left: 45%;
 }
