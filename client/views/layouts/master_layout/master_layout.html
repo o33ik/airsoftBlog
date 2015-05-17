@@ -1,6 +1,6 @@
 <template name="MasterLayout">
 	{{> yield region = 'top'}}
-	{{> loginButtons}}
+	<div class='login-btn'>{{> loginButtons}}</div>
 	{{> yield}}
 	{{> yield region = 'footer'}}
 </template>

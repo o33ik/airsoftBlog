@@ -11,7 +11,7 @@
 
 
 <template name='post'>
-	<div id={{_id}} class="post"> 
+	<div class="post"> 
 		<img  class='post-titleImage' src={{titleImg}}>
 		<div class='post-content'>	
 			<p class='post-title'>
@@ -24,7 +24,8 @@
 				{{formatDate createdAt}}
 			</p>
 			<p class='post-author'>
-				{{authorId}}
+				{{getAuthorName}}
+				{{authorName}}
 			</p>
 		</div>
 	</div>

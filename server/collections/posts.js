@@ -33,11 +33,6 @@ Posts.deny({
   }
 });
 
-Meteor.publish('posts', function () {
-    return Posts.find();
-});
-
-
 var CATEGORIES = ['views', 'milsim', 'weapons', 'equipment'];
 
 if(Posts.find().count() === 0) {

@@ -46,6 +46,11 @@ div.post {	/* блок із записом */
 	text-align: right;
 }
 .post-author {
+
+}
+.post-author:hover {
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 #loadMore {

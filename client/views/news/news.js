@@ -18,7 +18,6 @@ Template.News.events({
 
         // every loading of new posts, we are increasing number of skipping posts 
         this.skip += SKIP;
-        console.log(this.skip);
     }
 });
 
@@ -60,3 +59,34 @@ function getPostsFromCollection (category, skip) {
         data = Posts.find({category: category}, {skip: skip, limit: LIMIT});
     return data;
 }
+
+
+
+// reactVar, that contains obj with properties and values such as 'post_id' = 'author_id'
+var author_postReact = new ReactiveVar({});
+
+Template.post.events({
+    'click .post-author': function (e, tmpl) {
+        Router.go('/user/' + tmpl.data.authorId);
+    },
+    'click .post-title': function (e, tmpl) {
+        Router.go('/post/' + tmpl.data._id);
+    }
+});
+
+Template.post.helpers({
+    // get each author name and push it into reactVar
+    'getAuthorName': function () {
+        var self = this;
+        Meteor.call('userName', this.authorId, function (error, result) {
+            var author_post = author_postReact.get();
+            author_post[self._id] = result;
+            author_postReact.set(author_post);
+        });
+    },
+    'authorName': function () {
+        if (this._id in author_postReact.get())
+           return author_postReact.get()[this._id].profile.name;
+       return false;        
+    }
+});

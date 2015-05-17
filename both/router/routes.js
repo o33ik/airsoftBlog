@@ -73,3 +73,18 @@ Router.route(
 		}
 	}
 );
+
+
+Router.route(
+	'user', 
+	{	
+		path: '/user/:id',
+		template: 'User',
+		data: function () {
+			var self = this;
+			return {
+				userId: self.params.id
+			}
+		} 	
+	}
+);

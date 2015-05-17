@@ -1,6 +1,8 @@
 /*****************************************************************************/
-/* MasterLayout: Style */
+/* Posts Publish Functions
 /*****************************************************************************/
-.login-btn {
-	margin-left: 20px;
-}
+
+
+Meteor.publish('posts', function () {
+    return Posts.find({}, {sort: {'createdAt': -1}});
+});
