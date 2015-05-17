@@ -5,6 +5,13 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
 iron:router
+accounts-twitter
+accounts-password
+accounts-google
+accounts-facebook
+accounts-ui
+useraccounts:bootstrap
+twbs:bootstrap
+service-configuration
+reactive-var

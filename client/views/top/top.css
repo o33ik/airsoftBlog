@@ -1,3 +1,42 @@
 /*****************************************************************************/
 /* Top: Style */
 /*****************************************************************************/
+.top-container {
+	padding-bottom: 50px;
+}
+
+ul.menu {	/* список для меню */
+	margin: auto;
+	text-align: center;
+	padding:0px;
+	background: #272326;
+	position: fixed;
+	width: 100%;
+	min-width: 770px;
+}	
+.menu li {	/* елемент списку для меню */
+	display: inline-block;
+	background: #272326;
+	padding: 0px 25px;
+}
+.menu  a {	/* напис елементу меню */
+	font-size: 30px;
+	font-weight: 600;
+	color: white;
+}
+/* псевдокласи для написів елементів меню */
+.menu   a:visited {	
+    color: white;
+}
+.menu  a:active {
+    color: white;
+}
+.menu a:hover {
+	text-decoration: none;
+}
+.menu li:hover {
+	background: #CAB7E5;
+}
+.menu li.selected {
+	background: #F35E5E;
+}

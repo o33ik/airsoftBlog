@@ -4,7 +4,11 @@
 Router.configure({
   layoutTemplate: 'MasterLayout',
   loadingTemplate: 'Loading',
-  notFoundTemplate: 'NotFound'
+  notFoundTemplate: 'NotFound',
+  yieldTemplates: {
+    'Top': {'to': 'top'},
+    'Footer': {'to': 'footer'}
+  }
 });
 
 /*
@@ -12,5 +16,6 @@ Router.configure({
  *  Router.route('/', {name: 'home'});
 */
 
-Router.route('/news', {name: 'home'});
+Router.route('/', {name: 'home', template: 'Home'});
+Router.route('/news', {name: 'news', template: 'News'});
 Router.route('/:post', {name: 'post'});

@@ -1,3 +1,41 @@
 /*****************************************************************************/
 /* Post: Style */
 /*****************************************************************************/
+
+div.content {	/* блок з контентом */ 
+	background-color: white;
+	width: 700px;
+	margin: auto auto;
+	padding-top: 75px;
+}
+
+div.post {	/* блок із записом */
+	height: 200px;
+	margin-bottom:30px;
+	background: #ECECEC;
+}
+.post img{		/* зображення в записі */
+	float: left;
+	height: 200px;
+	width:250px;
+	margin-right: 15px;
+}
+.post div {
+	padding-top: 15px;
+	padding-right: 15px;
+}
+.post p{		/* текст запису */
+	color:  #191E39;
+	padding: 0px 20px 0px 20px;
+	text-indent: 20px;
+	font-size: 20px;
+}
+.post a{		/* заголовок запису */
+	padding: 0px 20px 0 20px;
+	color:  #191E39;
+	font-size: 24px;
+	text-decoration: none;
+}
+.post a:hover {		/* псевдоклас для заголовку запису */
+	text-decoration: underline;
+}
