@@ -1,2 +1,50 @@
 <template name="Post">
+	{{qwe}}
+	{{#if post}}
+		<div class='postPage'>
+			{{#with post}}
+				<h1 class='postPage-title'>{{title}}</h1>
+				<p class='postPage-createdAt'>{{formatDate createdAt}}</p>
+				<p class='postPage-category'>{{category}}</p>
+				<p class='postPage-author'>{{authorId}}</p>
+				<img class='postPage-titleImg' src={{titleImg}}>
+				<p class='postPage-text'>{{{text}}}</p>
+				<div class='postPage-commentsContainer'>
+					{{#if comments}}
+						<p>{{commentsCnt}} comments.</p>
+						{{#each comments}}
+							{{> Comment
+								comment = this
+							}}
+						{{/each}}
+					{{else}}
+						<p>No comments yet.</p>
+					{{/if}}
+
+					{{#if currentUser}}
+						<textarea class="form-control postPage-comment-textArea" rows="3"></textarea>
+						<button class='btn btn-default postPage-addComment-btn'>Write</button>
+					{{/if}}
+				</div>
+			{{/with}}
+		</div>
+	{{else}}
+		-_-
+	{{/if}}
+</template>
+
+<template name='Comment'>
+	<div class='comment'>
+		<img class='comment-authorImage' src='https://pp.vk.me/c629329/v629329344/214/Edk4GAIKxLg.jpg'>
+		<!-- <img class='comment-authorImage' src={{authorImage}}> -->
+
+		<div class='comment-right'>
+			<img class='comment-delete' src='https://cdn4.iconfinder.com/data/icons/geomicons/32/672366-x-128.png'>
+			{{#if isAuthorName}}
+				<p class='comment-author'>{{authorName}}</p>
+			{{/if}}
+			<p class='comment-text'>{{text}}</p>
+			<p class='comment-createdAt'>{{createdAt}}</p>
+		</div>
+	</div>
 </template>

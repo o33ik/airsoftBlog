@@ -4,8 +4,9 @@
  *    return Comments.find({is_public: true});
  *  }
  */
-Comments.allow({
+Comments.deny({
   insert: function (userId, doc) {
+
     return true;
   },
 
@@ -18,7 +19,7 @@ Comments.allow({
   }
 });
 
-Comments.deny({
+Comments.allow({
   insert: function (userId, doc) {
     return false;
   },

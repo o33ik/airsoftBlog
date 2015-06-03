@@ -5,9 +5,14 @@ div.content {	/* блок з контентом */
 	width: 70%;
 	min-width: 600px; 
 	margin: auto auto;
-	padding-top: 75px;
 	background-color: white;
-	padding: 70px 100px 50px 100px;
+	padding: 40px 100px 50px 100px;
+}
+
+#news-toCreatePost {
+	display: block;
+	margin: auto;
+	margin-bottom: 30px;
 }
 
 div.post {	/* блок із записом */

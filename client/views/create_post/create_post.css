@@ -1,0 +1,42 @@
+/*****************************************************************************/
+/* CreatePost: Style */
+/*****************************************************************************/
+.createPost {
+	background-color: white;
+	padding: 20px 20px 50px 20px;
+	width: 80%;
+	min-width: 700px;
+	margin: auto;
+}
+
+.createPost-title-label {
+	margin-bottom: 0;
+}
+.createPost-title {
+	width: 300px;
+	margin-bottom: 20px;
+}
+
+
+.createPost-titleImg-label {
+	margin-bottom: 0;
+}
+.createPost-titleImg {
+	width: 300px;
+	margin-bottom: 20px;
+}
+
+.createPost-category-label {
+	margin-bottom: 0;
+}
+.createPost-category {
+	margin-bottom: 20px;
+	width: 300px;
+}
+
+.createPost-editor {
+}
+
+#createPost-btn {
+	margin-top: 10px;	
+}

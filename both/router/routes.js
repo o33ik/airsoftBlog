@@ -39,6 +39,10 @@ Router.route(
 				category: 'news',
 				skip: SKIP
 			}
+		},
+		waitOn: function () {
+  			console.log ('wait news');
+			this.subscribe ('posts');
 		}
 	}
 );
@@ -55,6 +59,10 @@ Router.route(
       			category: self.params.category,
       			skip: SKIP
     		}
+  		},
+  		waitOn: function () {
+  			console.log ('wait category');
+  			this.subscribe ('posts', this.params.category);
   		}
 	}
 );
@@ -70,6 +78,10 @@ Router.route(
 			return {
 				postId: self.params.id
 			}
+		},
+		waitOn: function () {
+			this.subscribe ('post', this.params.id);
+			this.subscribe ('comments', this.params.id);
 		}
 	}
 );
@@ -81,6 +93,7 @@ Router.route(
 		path: '/user/:id',
 		template: 'User',
 		data: function () {
+  			console.log ('wait user')
 			var self = this;
 			return {
 				userId: self.params.id
@@ -88,3 +101,9 @@ Router.route(
 		} 	
 	}
 );
+Router.route(
+	'createPost', 
+	{
+		path: '/createPost',
+		template: 'CreatePost'
+	});

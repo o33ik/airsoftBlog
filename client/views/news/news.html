@@ -1,6 +1,9 @@
 <template name="News">
 	<div class='content'>
-  		{{#if isPosts}}
+		{{#if currentUser}}
+			<button id='news-toCreatePost' class='btn'>Create new post.</button>
+		{{/if}}
+  		{{#if posts}}
   			{{#each posts}}
   				{{> post}}
   			{{/each}}
@@ -21,12 +24,13 @@
 				{{{textSlicer text 1}}}
 			</p>
 			<p class="post-date">
-				{{formatDate createdAt}}
+				<!-- {{formatDate createdAt}} -->
+				{{createdAt}}
 			</p>
-			<p class='post-author'>
+<!-- 			<p class='post-author'>
 				{{getAuthorName}}
 				{{authorName}}
-			</p>
+			</p> -->
 		</div>
 	</div>
 </template>

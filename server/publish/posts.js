@@ -3,6 +3,13 @@
 /*****************************************************************************/
 
 
-Meteor.publish('posts', function () {
-    return Posts.find({}, {sort: {'createdAt': -1}});
+Meteor.publish('posts', function (category) {
+	if (category)
+		return Posts.find({category: category});	
+    return Posts.find({});
 });
+
+Meteor.publish('post', function (postId) {
+	console.log (postId);
+	return Posts.find({_id: postId});
+})

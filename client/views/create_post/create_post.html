@@ -1,0 +1,22 @@
+<template name="CreatePost">
+	{{#if currentUser}}
+		<div class='createPost'>
+			<p class="createPost-title-label">Title</p>
+			<input type="text" class="createPost-title form-control" placeholder="Text input">
+			<br>
+			<p class="createPost-titleImg-label">Title image</p>
+			<input type="text" class="createPost-titleImg form-control" placeholder="Text input">
+
+			<p class="createPost-category-label">Category</p>
+			<select class='createPost-category form-control'>
+			  	<option value="milsim">Milsim</option>
+			  	<option value="weapons" selected>Weapons</option>
+			  	<option value="equipment">Equipment</option>
+			  	<option value=null>Other</option>
+			</select>
+
+			<div id="summernote" class='createPost-editor'></div>
+			<button id='createPost-btn' class='btn-default btn'>Create post.</button>
+		</div>
+	{{/if}}
+</template>

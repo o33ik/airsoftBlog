@@ -1,8 +1,7 @@
 /*****************************************************************************/
-/* Global CSS Styles */
+/* Comments Publish Functions
 /*****************************************************************************/
-body {
-	font-family: 'Bitter', serif;
-	background-color: rgb(240, 240, 240);	
-/*	background: url(images/background.jpg) repeat;*/
-}
+
+Meteor.publish('comments', function (mediaId) {
+	return Comments.find({mediaId: mediaId}, {sort: {'createdAt': -1}});
+});

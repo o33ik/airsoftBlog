@@ -12,14 +12,14 @@ ul.menu {	/* список для меню */
 	background: #6F696E;
 	position: fixed;
 	width: 100%;
-	min-width: 770px;
+	min-width: 780px;
 }	
 .menu li {	/* елемент списку для меню */
 	display: inline-block;
 	padding: 0px 25px;
 }
 .menu  a {	/* напис елементу меню */
-	font-size: 30px;
+	font-size: 26px;
 	font-weight: 600;
 	color: white;
 }
